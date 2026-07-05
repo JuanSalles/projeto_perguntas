@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(choco install fvm -y)",
+      "Bash(dart pub global activate fvm)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
