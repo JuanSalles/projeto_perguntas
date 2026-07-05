@@ -27,6 +27,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
         contagemRegressiva--;
         if (contagemRegressiva <= 0) {
           timer.cancel();
+          _timer = null;
           indiceAtual = 0;
           indiceRespostaSelecionada = null;
         }
@@ -70,7 +71,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
   ];
   @override
   Widget build(BuildContext context) {
-    if (indiceAtual >= perguntas.length) {
+    if (indiceAtual >= perguntas.length && _timer == null) {
       iniciarContagemRegressiva();
     }
     return MaterialApp(
