@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/mini_apps.dart';
+import 'about_me.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,7 +9,21 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Meus Estudos')),
+      appBar: AppBar(
+        title: const Text('Meus Estudos'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            tooltip: 'Sobre o projeto',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AboutMeScreen()),
+              );
+            },
+          ),
+        ],
+      ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
         itemCount: miniApps.length,
